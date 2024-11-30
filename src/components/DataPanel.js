@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function DataPanel({ records }) {
+function DataPanel({ economicData }) {
+  const records = economicData.frequent;
   const [currentPage, setCurrentPage] = useState(1);
   const recordsPerPage = 10;
 
@@ -15,6 +16,9 @@ function DataPanel({ records }) {
       setCurrentPage(pageNumber);
     }
   };
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [economicData]);
 
   const generatePageNumbers = () => {
     const pages = [];

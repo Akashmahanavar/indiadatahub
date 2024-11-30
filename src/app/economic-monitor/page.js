@@ -33,7 +33,7 @@ export default function HomePage() {
         handleChange={handleChange}
       />
       <div style={{ width: "calc(100% - 300px)" }}>
-        <DataPanel records={economicData.frequent} />
+        <DataPanel economicData={economicData} />
       </div>
     </div>
   );
